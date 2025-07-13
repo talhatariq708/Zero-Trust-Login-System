@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 shadow">
+  <h2>Employee Dashboard</h2>
+  <p>Welcome, {{ email }}</p>
+  <a href="/logout" class="btn btn-danger w-100">Logout</a>
+</div>
+{% endblock %}
+<a href="/logout" class="btn btn-danger">Logout</a>

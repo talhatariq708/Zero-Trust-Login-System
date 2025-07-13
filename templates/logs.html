@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Login Logs</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Role</th>
+      <th>IP</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>ISP</th>
+      <th>Device</th>
+      <th>Action</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for log in logs %}
+    <tr>
+      <td>{{ log.email }}</td>
+      <td>{{ log.role }}</td>
+      <td>{{ log.ip }}</td>
+      <td>{{ log.city }}</td>
+      <td>{{ log.country }}</td>
+      <td>{{ log.org }}</td>
+      <td>{{ log.device }}</td>
+      <td>{{ log.action }}</td>
+      <td>{{ log.timestamp }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary mt-3">Back to Dashboard</a>
+{% endblock %}
